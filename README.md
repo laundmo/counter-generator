@@ -79,7 +79,7 @@ Here you can press `Start` to start counting up, or `Generate Video` to load a r
 
 ![](https://i.vgy.me/d37SeX.png)
 
-Now you can count up by pressing or holding your keybind. Once you're done, you can hit `Save` to save the current coutner to a file, in case you want to generate a video with a different config later. Otherwise, just press `Generate Video`.
+Now you can count up by pressing or holding your keybind (`<space>` by default). Once you're done, you can hit `Save` to save the current coutner to a file, in case you want to generate a video with a different config later. Otherwise, just press `Generate Video`.
 
 ![](https://i.vgy.me/86d3lD.png)
 
