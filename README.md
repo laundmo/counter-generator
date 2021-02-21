@@ -72,11 +72,17 @@ Filename of a font file (either ttf or ttc) in the current directory.
 [Notes on Limitations (important for MacOs)](https://pynput.readthedocs.io/en/latest/limitations.html)
 
 When starting, you will be presented with a blank window.
+
 ![](https://i.vgy.me/F28UNy.png)
+
 Here you can press `Start` to start counting up, or `Generate Video` to load a recorded count from a file.
+
 ![](https://i.vgy.me/d37SeX.png)
+
 Now you can count up by pressing or holding your keybind. Once you're done, you can hit `Save` to save the current coutner to a file, in case you want to generate a video with a different config later. Otherwise, just press `Generate Video`.
+
 ![](https://i.vgy.me/86d3lD.png)
+
 Here you can enter a file name to load, or just click `Generate` to use the current counter. Loading from a clip name will discard the current data.
 
 After you click generate, a file named `text0.avi` should have appeared in the current folder. If you pressed `Start/Stop` multiple times there may be multiple other files with the name `text1.avi`, `text2.avi` etc.
