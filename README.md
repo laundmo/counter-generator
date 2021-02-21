@@ -88,3 +88,6 @@ Here you can enter a file name to load, or just click `Generate` to use the curr
 After you click `generate`, a file named `text0.avi` should have appeared in the current folder. If you pressed `Start/Stop` multiple times there may be multiple other files with the name `text1.avi`, `text2.avi` etc.
 
 Attention: these files will be overwritten if you generate another video. Make sure to rename them or copy them elsewhere.
+
+## Example with default config
+![](https://i.vgy.me/ctbPiv.gif)
