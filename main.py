@@ -1,5 +1,4 @@
-from functools import partial, partialmethod
-from tkinter.constants import SEL_FIRST
+from functools import partial
 from pynput import keyboard
 import time
 import json
@@ -128,7 +127,7 @@ class Manager:
     def __init__(self):
         self.unsafed_warned = False
         self.stopped = False
-        self.window = sg.Window("filename picker", self.layout)
+        self.window = sg.Window("Counter", self.layout)
         self.setup_hotkeyhandler()
 
     def setup_hotkeyhandler(self):

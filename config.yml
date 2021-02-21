@@ -2,7 +2,7 @@ keybinds:
   count: <space>
   new-clip: <shift> + s
 counter:
-  hold-multiplier: 2 # multiply keystrokes while holding by this
+  hold-multiplier: 1 # multiply keystrokes while holding by this
   hold-delay: 0.1 # the delay between repeated hold keystrokes
 font: fontname.ttf
 output:
@@ -10,3 +10,5 @@ output:
   height: 200
   fps: 60
   fontsize: 200
+  prepend: +
+  extend: 2

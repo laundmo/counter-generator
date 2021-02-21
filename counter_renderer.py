@@ -7,11 +7,13 @@ from PIL import ImageFont, ImageDraw, Image
 
 
 class CounterRenderer:
-    def __init__(self, keyframes, font="./font.ttf", video_name="text{}", width=500, height=200, fps=60, fontsize=200):
+    def __init__(self, keyframes, font="./font.ttf", video_name="text{}", width=500, height=200, fps=60, fontsize=200, prepend="+", extend=2):
 
         self.width = width
         self.height = height
         self.FPS = fps
+        self.prepend = prepend
+        self.extend = extend
 
         self.font = ImageFont.truetype(font, fontsize)
         self.keyframe_blocks = keyframes
@@ -25,6 +27,7 @@ class CounterRenderer:
         return cls(keyframes, **kwargs)
 
     def write_on_frame(self, frame, text):
+        text = self.prepend + text
         img_pil = Image.fromarray(frame)
         draw = ImageDraw.Draw(img_pil)
         draw.text((0, 0), text, font=self.font, fill=(255, 255, 255, 0))
@@ -32,7 +35,7 @@ class CounterRenderer:
 
     def render_clip(self, keyframes, i):
         seconds = math.floor(min(keyframes) + max(keyframes))
-        frames = np.linspace(0, seconds, num=self.FPS * seconds)
+        frames = np.linspace(0, seconds + self.extend, num=self.FPS * seconds)
 
         fourcc = cv2.VideoWriter_fourcc(*"MP42")
         video = cv2.VideoWriter(
