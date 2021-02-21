@@ -47,7 +47,7 @@ some examples for the syntax are:
 #### counter
 
 Here you can configure the counter behaviour.
-The `hold-delay` is how quickly the coutner counts up while holding, assuming a `hold-multiplier` of 1.
+The `hold-delay` is how quickly the counter counts up while holding, assuming a `hold-multiplier` of 1.
 The counter will ramp up to `hold-multiplier` times the base speed.
 You can set `hold-multiplier` to 0 to disable the hold feature completely.
 
@@ -79,12 +79,12 @@ Here you can press `Start` to start counting up, or `Generate Video` to load a r
 
 ![](https://i.vgy.me/d37SeX.png)
 
-Now you can count up by pressing or holding your keybind (`<space>` by default). Once you're done, you can hit `Save` to save the current coutner to a file, in case you want to generate a video with a different config later. Otherwise, just press `Generate Video`.
+Now you can count up by pressing or holding your keybind (`<space>` by default). Once you're done, you can hit `Save` to save the current counter to a file, in case you want to generate a video with a different config later. Otherwise, just press `Generate Video`.
 
 ![](https://i.vgy.me/86d3lD.png)
 
 Here you can enter a file name to load, or just click `Generate` to use the current counter. Loading from a clip name will discard the current data.
 
-After you click generate, a file named `text0.avi` should have appeared in the current folder. If you pressed `Start/Stop` multiple times there may be multiple other files with the name `text1.avi`, `text2.avi` etc.
+After you click `generate`, a file named `text0.avi` should have appeared in the current folder. If you pressed `Start/Stop` multiple times there may be multiple other files with the name `text1.avi`, `text2.avi` etc.
 
 Attention: these files will be overwritten if you generate another video. Make sure to rename them or copy them elsewhere.
