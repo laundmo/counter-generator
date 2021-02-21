@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# project ignores
+*.json
+*.avi
+*.mp4
+*.ttf
+*.ttc
