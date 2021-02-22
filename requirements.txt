@@ -3,3 +3,4 @@ PyYAML
 numpy
 pillow
 opencv-python
+pynput
