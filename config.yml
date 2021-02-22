@@ -4,11 +4,13 @@ keybinds:
 counter:
   hold-multiplier: 1 # multiply keystrokes while holding by this
   hold-delay: 0.1 # the delay between repeated hold keystrokes
-font: fontname.ttf
 output:
+  font: fontname.ttf
   width: 500
   height: 200
   fps: 60
   fontsize: 200
   prepend: +
   extend: 2
+  start_at: 1
+  name_template: text{}

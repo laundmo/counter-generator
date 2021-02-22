@@ -6,26 +6,18 @@ import PySimpleGUI as sg
 from counter_renderer import CounterRenderer
 from threading import Event, Thread
 from collections import defaultdict
+from config import config
 
-try:
-    from yaml import CSafeLoader as Loader
-except ImportError:
-    from yaml import SafeLoader as Loader
-import yaml
 
 keyframes = [[]]
 start = time.time()
-
-with open("config.yml") as f:
-    config = yaml.load(f, Loader=Loader)
-    print(config)
 
 
 def on_new_keyframe(window):
     diff = time.time() - start
     keyframes[-1].append(diff)
     window["output"].update("\n".join(map(str, keyframes[-1][-4:])))
-    window["counter"].update(len(keyframes[-1]) / 10)
+    window["counter"].update((len(keyframes[-1]) / 10) + config["output"]["start_at"])
 
 
 def start_new_clip(window):
@@ -193,12 +185,10 @@ class Manager:
     def handle_generate(self, values):
         if values["save_loc"] in ("", "clip"):
             self.window["save_loc"].update(visible=False)
-            cr = CounterRenderer(keyframes, font=config["font"], **config["output"])
+            cr = CounterRenderer(keyframes)
         else:
             self.window["save_loc"].update(visible=False)
-            cr = CounterRenderer.from_file(
-                f"{values['save_loc']}.json", font=config["font"], **config["output"]
-            )
+            cr = CounterRenderer.from_file(f"{values['save_loc']}.json")
         self.window["output"].update("Starting render, please be patient")
         if len(keyframes) > 0:
             cr.render_individual_clips()
@@ -221,7 +211,6 @@ class Manager:
         }
         while True:  # The Event Loop
             event, values = self.window.read()
-            print(event, values)
             if event == sg.WIN_CLOSED:
                 self.handle_exit(values)
             event_callable = method_list.get(
