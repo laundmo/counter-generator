@@ -34,7 +34,7 @@ class CounterRenderer:
         return np.array(img_pil)
 
     def render_clip(self, keyframes, i):
-        seconds = math.floor(min(keyframes) + max(keyframes))
+        seconds = math.ceil(min(keyframes) + max(keyframes))
         frames = np.linspace(0, seconds + self.extend, num=self.FPS * seconds)
 
         fourcc = cv2.VideoWriter_fourcc(*"MP42")
