@@ -2,7 +2,7 @@ from functools import partial
 from pynput import keyboard
 import time
 import json
-import PySimpleGUI as sg
+from config import PySimpleGUI as sg
 from counter_renderer import CounterRenderer
 from threading import Event, Thread
 from collections import defaultdict
