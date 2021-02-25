@@ -7,7 +7,7 @@ from dataclasses import dataclass
 
 
 def get_counter(n):
-    return str((n / 10) + config["output"]["start_at"])
+    return round(str((n / 10) + config["output"]["start_at"]), 1)
 
 
 @dataclass
