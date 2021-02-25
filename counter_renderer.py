@@ -51,7 +51,7 @@ class CounterRenderer:
             f"./{self.c.name_template.format(i)}.avi",
             fourcc,
             float(self.c.fps),
-            (self.c.width, self.c.hei^xght),
+            (self.c.width, self.c.height),
         )
 
         last = 0
