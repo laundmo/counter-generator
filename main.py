@@ -3,7 +3,7 @@ from pynput import keyboard
 import time
 import json
 from config import PySimpleGUI as sg
-from counter_renderer import CounterRenderer
+from counter_renderer import CounterRenderer, get_counter
 from threading import Event, Thread
 from collections import defaultdict
 from config import config
@@ -17,7 +17,7 @@ def on_new_keyframe(window):
     diff = time.time() - start
     keyframes[-1].append(diff)
     window["output"].update("\n".join(map(str, keyframes[-1][-4:])))
-    window["counter"].update((len(keyframes[-1]) / 10) + config["output"]["start_at"])
+    window["counter"].update(get_counter(keyframes[-1]))
 
 
 def start_new_clip(window):
@@ -26,7 +26,7 @@ def start_new_clip(window):
     start = time.time()
     if len(keyframes[-1]) > 0:
         keyframes.append([])
-    window["counter"].update((len(keyframes[-1]) / 10))
+    window["counter"].update(get_counter(keyframes[-1]))
     window["start"].update(visible=False)
     window["stop"].update(visible=True)
 
@@ -76,7 +76,7 @@ class Manager:
         [
             sg.Text(size=(30, 4), key="output"),
             sg.Text(
-                len(keyframes[-1]) / 10,
+                get_counter(keyframes[-1]),
                 size=(4, 1),
                 font=("Helvetica", 25),
                 key="counter",

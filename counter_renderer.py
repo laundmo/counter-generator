@@ -68,7 +68,7 @@ class CounterRenderer:
 
         for _ in range(self.c.fps * self.c.extend):
             frame = np.zeros((self.c.height, self.c.width, 3), dtype=np.uint8)
-            frame = self.write_on_frame(frame, str(last / 10))
+            frame = self.write_on_frame(frame, get_counter(last))
             video.write(frame)
 
         video.release()
