@@ -5,12 +5,12 @@ counter:
   hold-multiplier: 1 # multiply keystrokes while holding by this
   hold-delay: 0.1 # the delay between repeated hold keystrokes
 output:
-  font: fontname.ttf
   width: 500
   height: 200
   fps: 60
   fontsize: 200
   prepend: +
   extend: 2
+  font: fontname.ttf
   start_at: 1
   name_template: text{}

@@ -51,25 +51,24 @@ The `hold-delay` is how quickly the counter counts up while holding, assuming a 
 The counter will ramp up to `hold-multiplier` times the base speed.
 You can set `hold-multiplier` to 0 to disable the hold feature completely.
 
-#### font
-
-Filename of a font file (either ttf or ttc) in the current directory.
-
 #### output
 
-| Name     | Default | Description                                                                                        |
-|----------|---------|----------------------------------------------------------------------------------------------------|
-| width    | 500     | The total width of the final video, in pixels.                                                     |
-| height   | 200     | The height of the final video, in pixels.                                                          |
-| fps      | 60      | The framerate of the final video. Lower framerates may make the counter look considerably worse.   |
-| fontsize | 200     | The font size of the counter, in pixels. Match height for best result.                             |
-| prepend  | +       | A text to add in front of the counter.                                                             |
-| extend   | 2       | This number of seconds to extend the video by. dont set to 0, it will mess up the last few counts. |
+| Name          | Default      | Description                                                                                        |
+|---------------|--------------|----------------------------------------------------------------------------------------------------|
+| width         | 500          | The total width of the final video, in pixels.                                                     |
+| height        | 200          | The height of the final video, in pixels.                                                          |
+| fps           | 60           | The framerate of the final video. Lower framerates may make the counter look considerably worse.   |
+| fontsize      | 200          | The font size of the counter, in pixels. Match height for best result.                             |
+| prepend       | +            | A text to add in front of the counter.                                                             |
+| extend        | 2            | This number of seconds to extend the video by. dont set to 0, it will mess up the last few counts. |
+| font          | fontname.ttf | Filename of a font file (either ttf or ttc) in the current directory.                              |
+| start_at      | 1            | The number to start at. This could be set to 0.9 to have the counter start at 1                    |
+| name_template | text{}       | The template for the filenames, `{}` will be replaced with the number.                             |
 
 
 ## Usage
 
-[Notes on Limitations (important for MacOs)](https://pynput.readthedocs.io/en/latest/limitations.html)
+[Notes on Limitations (important for MacOS)](https://pynput.readthedocs.io/en/latest/limitations.html)
 
 When starting, you will be presented with a blank window.
 
